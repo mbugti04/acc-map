@@ -11,22 +11,22 @@ locations = [
         "id": 1,
         "latitude": 41.37937613418269,
         "longitude": -72.10613281840935,
-        "marker_title": "Location 1",
-        "marker_description": "Description for location 1"
+        "marker_title": "Construction at Intersection",
+        "marker_description": "Between Plant and NLH. Alternative sidewalk"
     },
     {
         "id": 2,
         "latitude": 41.38,
         "longitude": -72.2,
-        "marker_title": "Location 2",
-        "marker_description": "Description for location 2"
+        "marker_title": "Construction in front of Cro",
+        "marker_description": "Only back entrace is open. Go through library green."
     },
     {
         "id": 3,
         "latitude": 41.39,
         "longitude": -72.3,
-        "marker_title": "Location 3",
-        "marker_description": "Description for location 3"
+        "marker_title": "Elevator broken.",
+        "marker_description": "..."
     }
 ]
 
