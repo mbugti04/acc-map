@@ -1,5 +1,6 @@
 import { Image, StyleSheet, Platform } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
+import { useEffect, useState } from 'react';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
@@ -7,28 +8,45 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
 export default function HomeScreen() {
+  const [coordinates, setCoordinates] = useState<{ latitude: number; longitude: number }[]>([]);
+
+  useEffect(() => {
+    fetch('http://129.133.74.40:5001/location')
+      .then(response => response.json())
+      .then(data => {
+        if (Array.isArray(data)) {
+          setCoordinates(data);
+        } else {
+          console.error('Invalid data format:', data);
+        }
+      })
+      .catch(error => console.error('Error fetching coordinates:', error));
+  }, []);
+
   return (
     <ThemedView style={styles.mapContainer}>
-        <MapView
-          style={styles.map}
-          initialRegion={{
-            latitude: 41.38014194388779,
-            longitude: -72.10416578021255,
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421,
-          }}
-        >
+      <MapView
+        style={styles.map}
+        initialRegion={{
+          latitude: 41.38014194388779,
+          longitude: -72.10416578021255,
+          latitudeDelta: 0.0922,
+          longitudeDelta: 0.0421,
+        }}
+      >
+        {coordinates.map((coordinate, index) => (
           <Marker
-            key={0}
+            key={index}
             coordinate={{
-              latitude: 41.38014194388779,
-              longitude: -72.10416578021255,
+              latitude: coordinate.latitude,
+              longitude: coordinate.longitude,
             }}
-            title="Marker Title"
-            description="Marker Description"
+            title={`Marker ${index + 1}`}
+            description={`Marker ${index + 1} Description`}
           />
-        </MapView>
-      </ThemedView>
+        ))}
+      </MapView>
+    </ThemedView>
   );
 }
 
