@@ -37,21 +37,21 @@ export default function TabLayout() {
         name="feed"
         options={{
           title: 'Feed',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="feed.fill" color={color} />,
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="macwindow" color={color} />,
         }}
       />
        <Tabs.Screen
         name="leaderboard"
         options={{
           title: 'Leaderboard',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="celebration.fill" color={color} />,
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="rosette" color={color} />,
         }}
       />
        <Tabs.Screen
         name="setting"
         options={{
           title: 'Settings',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="settings.fill" color={color} />,
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="gear" color={color} />,
         }}
       />
     </Tabs>

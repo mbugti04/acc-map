@@ -15,7 +15,7 @@ export default function TabThreeScreen() {
         <IconSymbol
           size={310}
           color="#808080"
-          name="setting"
+          name="gear"
           style={styles.headerImage}
         />
       }>
