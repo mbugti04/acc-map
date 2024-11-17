@@ -19,9 +19,13 @@ export default function HomeScreen() {
           }}
         >
           <Marker
-            coordinate={{ latitude: 37.78825, longitude: -122.4324 }}
-            title={"Marker Title"}
-            description={"Marker Description"}
+            key={0}
+            coordinate={{
+              latitude: 41.38014194388779,
+              longitude: -72.10416578021255,
+            }}
+            title="Marker Title"
+            description="Marker Description"
           />
         </MapView>
       </ThemedView>
