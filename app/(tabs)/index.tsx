@@ -14,7 +14,7 @@ export default function HomeScreen() {
           initialRegion={{
             latitude: 41.38014194388779,
             longitude: -72.10416578021255,
-            latitudeDelta: 30.0922,
+            latitudeDelta: 0.0922,
             longitudeDelta: 0.0421,
           }}
         >
