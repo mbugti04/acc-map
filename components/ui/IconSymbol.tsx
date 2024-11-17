@@ -15,7 +15,7 @@ const MAPPING = {
   'rosette': 'celebration',
   'chevron.left.forwardslash.chevron.right': 'code',
   'chevron.right': 'chevron-right',
-}; as Partial<
+} as Partial<
   Record<
     import('expo-symbols').SymbolViewProps['name'],
     React.ComponentProps<typeof MaterialIcons>['name']
