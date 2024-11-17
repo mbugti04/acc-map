@@ -15,7 +15,7 @@ export default function TabFourScreen() {
         <IconSymbol
           size={310}
           color="#808080"
-          name="celebration"
+          name="rosette"
           style={styles.headerImage}
         />
       }>
