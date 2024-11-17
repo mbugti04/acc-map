@@ -7,9 +7,27 @@ def home():
     return "Hello, Flask!"
 
 locations = [
-    {"latitude": 41.37937613418269, "longitude": -72.10613281840935},
-    {"latitude": 41.38, "longitude": -72.2},
-    {"latitude": 41.39, "longitude": -72.3}
+    {
+        "id": 1,
+        "latitude": 41.37937613418269,
+        "longitude": -72.10613281840935,
+        "marker_title": "Location 1",
+        "marker_description": "Description for location 1"
+    },
+    {
+        "id": 2,
+        "latitude": 41.38,
+        "longitude": -72.2,
+        "marker_title": "Location 2",
+        "marker_description": "Description for location 2"
+    },
+    {
+        "id": 3,
+        "latitude": 41.39,
+        "longitude": -72.3,
+        "marker_title": "Location 3",
+        "marker_description": "Description for location 3"
+    }
 ]
 
 @app.route('/location')

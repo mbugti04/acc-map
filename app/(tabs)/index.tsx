@@ -8,7 +8,7 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
 export default function HomeScreen() {
-  const [coordinates, setCoordinates] = useState<{ latitude: number; longitude: number }[]>([]);
+  const [coordinates, setCoordinates] = useState<{ id: number; latitude: number; longitude: number; marker_title: string; marker_description: string }[]>([]);
 
   useEffect(() => {
     fetch('http://129.133.74.40:5001/location')
@@ -34,15 +34,15 @@ export default function HomeScreen() {
           longitudeDelta: 0.0421,
         }}
       >
-        {coordinates.map((coordinate, index) => (
+        {coordinates.map((coordinate) => (
           <Marker
-            key={index}
+            key={coordinate.id}
             coordinate={{
               latitude: coordinate.latitude,
               longitude: coordinate.longitude,
             }}
-            title={`Marker ${index + 1}`}
-            description={`Marker ${index + 1} Description`}
+            title={coordinate.marker_title}
+            description={coordinate.marker_description}
           />
         ))}
       </MapView>
